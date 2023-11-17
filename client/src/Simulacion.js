@@ -1,9 +1,15 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import s from './Simulacion.module.css';
+import Header from './components/Header/Header';
 
-function Simular() {
+function Simulacion() {
+
+  const { nombres, apellidos, telefono, email, monto, cuotas, interes, valorCuota } = useParams();
 
   return (
+    <>
+    <Header />
     <article className={s.wrapper}>
       <h1>Simulación del préstamo</h1>
       <div className={s.box}>
@@ -11,37 +17,37 @@ function Simular() {
         <div className={s.infos}>
           <div className={s.info}>
             <text className={s.rotulo}>Nombres:</text>
-            <text>María José</text>
+            <span>{nombres}</span>
           </div>
           <div className={s.info}>
             <tex className={s.rotulo}>Teléfono:</tex>
-            <text>+56 9 1234 5678</text>
+            <text>{telefono}</text>
           </div>
           <div className={s.info}>
             <tex className={s.rotulo}>Monto en UF:</tex>
-            <text>1000</text>
+            <text>{monto}</text>
           </div>
           <div className={s.info}>
             <tex className={s.rotulo}>Tasa de interés:</tex>
-            <text>5%</text>
+            <text>{interes}</text>
           </div>
         </div>
         <div className={s.infos}>
           <div className={s.info}>
             <text className={s.rotulo}>Apellidos:</text>
-            <text>Gonzalez Torres</text>
+            <text>{apellidos}</text>
           </div>
           <div className={s.info}>
             <tex className={s.rotulo}>Email:</tex>
-            <text>mariagonzalez@example.com</text>
+            <text>{email}</text>
           </div>
           <div className={s.info}>
-            <tex className={s.rotulo}>Monto en UF:</tex>
-            <text>1000</text>
+            <tex className={s.rotulo}>Valor de la cuota en UF:</tex>
+            <text>{valorCuota}</text>
           </div>
           <div className={s.info}>
-            <tex className={s.rotulo}>Tasa de interés:</tex>
-            <text>5%</text>
+            <tex className={s.rotulo}>Cantidad de cuotas:</tex>
+            <text>{cuotas}</text>
           </div>
         </div>
       </div>
@@ -51,8 +57,9 @@ function Simular() {
       </div>
       </div>
     </article>
+    </>
 
   );
 }
 
-export default Simular;
+export default Simulacion;

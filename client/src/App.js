@@ -9,7 +9,7 @@ function App() {
       <div className="app">
         <Routes>
           <Route path="/Simular" element={<Simular />} />
-          <Route path="/Simulacion" element={<Simulacion />} />
+          <Route path="/Simulacion/:nombres/:apellidos/:telefono/:email/:monto/:cuotas/:interes/:valorCuota" element={<Simulacion nombres="francisca" apellidos="figueroa" telefono="12345678"/>}/>
         </Routes>
       </div>
     </Router>
